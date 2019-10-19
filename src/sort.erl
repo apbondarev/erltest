@@ -2,7 +2,8 @@
 -author("user").
 
 -export([
-  merge_sort/1
+         merge_sort/1,
+         qsort/1
 ]).
 
 reverse(L) -> reverse(L, []).
@@ -57,3 +58,13 @@ merge_sort(List) ->
   S1 = merge_sort(A1),
   S2 = merge_sort(A2),
   merge_lists(S1, S2).
+
+qsort([]) ->
+    [];
+qsort([A]) ->
+    [A];
+qsort([A,B]) ->
+    if
+        A=<B -> [A,B];
+        true -> [B,A]
+    end.
