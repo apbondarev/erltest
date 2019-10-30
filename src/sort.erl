@@ -68,3 +68,8 @@ qsort([A,B]) ->
         A=<B -> [A,B];
         true -> [B,A]
     end.
+
+qsort(L, H, I, J) when I >= J ->
+    Temp = array:get(H, L),
+    array:set(H, array:get(I, ;
+qsort(L, H, I, J) ->
